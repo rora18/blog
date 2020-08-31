@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Photo blog</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="stylesheets/landing.css"> -->
+        <link rel="stylesheet" href="stylesheets/main.css">
+    </head>
+    <script src="https://kit.fontawesome.com/027c8cef30.js" crossorigin="anonymous"></script>
+
+    <body>
+        <div class="container">
+        <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+        </div>
+
+        <div id="landing-header">
+            <!-- <h1> this is the new landing page</h1> -->
+            <h1> <em>WELCOME TO MY</em> 
+                <a href="/campgrounds"><i class="fas fa-camera-retro"></i>   blog </a> 
+            </h1>
+            <a href="/campgrounds" class="font-weight-light font-italic">
+                <i class="fas fa-door-open"></i>
+            </a>
+        </div>
+
+        <ul class="slideshow">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+<!-- <%- include ('partials/footer'); -%> -->
