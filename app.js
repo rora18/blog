@@ -7,7 +7,8 @@ const { session } = require("passport");
 const campground = require("./models/campground");
 
 //var hostname = '127.0.0.1';
-var port = 5000;
+//var port = 5000;
+var port = 80;
 var express        = require("express"),
     app            = express(),
     bodyParser     = require("body-parser"),

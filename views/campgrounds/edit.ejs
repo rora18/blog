@@ -3,7 +3,7 @@
 <div class="container"> 
         <h1 style="text-align: center;">Edit <%=campground.name%></h1>
         <div style="width:50%; margin:20px auto;">  
-            <form action="/campgrounds/<%=campground._id %>?_method=PUT" method="POST">
+            <form action="/blogs/<%=campground._id %>?_method=PUT" method="POST">
                 <div class="form-group">
                     <input class="form-control" type="text" name="campground[name]" value="<%=campground.name%>"> 
                 </div>
@@ -17,7 +17,7 @@
                     <button class="btn btn-lg btn-primary btn-block">Submit!</button> 
                 </div>
             </form>
-            <a href="/campgrounds">Go back</a>
+            <a href="/blogs">Go back</a>
         </div>
 
 </div>

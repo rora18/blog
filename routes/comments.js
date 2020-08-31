@@ -7,11 +7,11 @@ var middleware=require("../middleware");
 
 
 //========COMMENTS NEW ROUTES========//
-router.get("/campgrounds/:id/comments/new",middleware.isLoggedIn,function(req,res){
+router.get("/blogs/:id/comments/new",middleware.isLoggedIn,function(req,res){
     Campground.findById(req.params.id,function(err,campground){
       if(err){
         console.log(err);
-        res.redirect("/campground")
+        res.redirect("/blogs")
       } else{
         res.render("comments/new",{campground:campground});
       }
@@ -19,11 +19,11 @@ router.get("/campgrounds/:id/comments/new",middleware.isLoggedIn,function(req,re
 });    
 
 //========CREATE NEW COMMENTS ROUTES========//  
-router.post("/campgrounds/:id/comments/",middleware.isLoggedIn,function(req,res){
+router.post("/blogs/:id/comments/",middleware.isLoggedIn,function(req,res){
     Campground.findById(req.params.id,function(err,campground){
       if(err){
         req.flash("error","Something went wrong");
-        res.redirect("/campgrounds");      
+        res.redirect("/blogs");      
       } else{
         Comment.create(req.body.comment,function(err,comment){
           if(err){
@@ -35,7 +35,7 @@ router.post("/campgrounds/:id/comments/",middleware.isLoggedIn,function(req,res)
             campground.comments.push(comment);
             campground.save();
             req.flash("success","Comment Added");
-            res.redirect('/campgrounds/'+campground._id);
+            res.redirect('/blogs/'+campground._id);
           }
         });
       }
@@ -43,7 +43,7 @@ router.post("/campgrounds/:id/comments/",middleware.isLoggedIn,function(req,res)
 });
 
 //========EDIT COMMENTS NEW ROUTES========//
-router.get("/campgrounds/:id/comments/:comment_id/edit",middleware.checkCommentOwnership,function(req,res){
+router.get("/blogs/:id/comments/:comment_id/edit",middleware.checkCommentOwnership,function(req,res){
   Comment.findById(req.params.comment_id,function(err,foundComment){
     if(err){
       req.flash("error","Something went wrong");
@@ -55,25 +55,25 @@ router.get("/campgrounds/:id/comments/:comment_id/edit",middleware.checkCommentO
 });
 
 //UPDATE COMMENT ROUTE
-router.put("/campgrounds/:id/comments/:comment_id",middleware.checkCommentOwnership,function(req,res){
+router.put("/blogs/:id/comments/:comment_id",middleware.checkCommentOwnership,function(req,res){
   Comment.findByIdAndUpdate(req.params.comment_id,req.body.comment,function(err,updatedComment){
     if(err){
       res.redirect("back");
     } else{
       req.flash("success","Comment Updated");
-      res.redirect("/campgrounds/" +req.params.id);
+      res.redirect("/blogs/" +req.params.id);
     }
   });
 });
 
 //DESTROY COMMENT ROUTE
-router.delete("/campgrounds/:id/comments/:comment_id",middleware.checkCommentOwnership,function(req,res){
+router.delete("/blogs/:id/comments/:comment_id",middleware.checkCommentOwnership,function(req,res){
   Comment.findByIdAndRemove(req.params.comment_id,function(err){
     if(err){
       res.redirect("back");
     } else {
       req.flash("success","Comment Deleted");
-      res.redirect("/campgrounds/"+req.params.id);
+      res.redirect("/blogs/"+req.params.id);
     }
   });
 });

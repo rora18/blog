@@ -11,6 +11,7 @@
     <script src="https://kit.fontawesome.com/027c8cef30.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/027c8cef30.js" crossorigin="anonymous"></script>
     <body>
+        <div>
         <nav id="menu_new" class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="/">my <i class="fas fa-camera-retro"></i>blog</a>
             <a class="navbar-brand" href="/campgrounds/new"><i class="fas fa-cloud-upload-alt"></i></a>
@@ -21,7 +22,7 @@
                 <ul class="navbar-nav">
                     <% if(!currentUser){ %>
                         <li class="nav-item">
-                            <a class="nav-link" href="/login">Login</a>
+                            <a class="nav-link" href="/login">Loginn</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/register">Sign Up</a>
@@ -30,12 +31,14 @@
                             <a class="nav-link" href="#">Signed In as <%=currentUser.username%></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/logout">Logout</a>
+                            <a class="nav-link" href="/logout">Logoutt</a>
                         </li>
                     <%}%> 
                 </ul>
             </div>
         </nav>
+        </div>
+        <p> this is a place holder</p>
         <div class="container"> 
             <% if(error && error.length > 0){ %>
                 <div class=" alert alert-danger" role="alert">

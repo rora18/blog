@@ -18,12 +18,14 @@ router.post("/register",function(req,res){
     var newUser=new User({username:req.body.username});
     User.register(newUser,req.body.password,function(err,user){
       if(err){
-        req.flash("error",err.message);
+//        req.flash("error",err.message);
+        req.flash("error","Some error");
+        // res.send(err.message);
         return res.redirect("register");
       }
       passport.authenticate("local")(req,res,function(){
-        req.flash("success","Welcome to My Blog"+ user.username);
-        res.redirect("/campgrounds");
+        req.flash("Success","Welcome to My Blog "+ user.username);
+        res.redirect("/blogs");
       });
     });
 });
@@ -35,7 +37,7 @@ router.get("/login",function(req,res){
   
 router.post("/login",passport.authenticate("local",
     {
-      successRedirect:"/campgrounds",
+      successRedirect:"/blogs",
       failureRedirect:"/login",
       failureFlash:true,
       successFlash:"Successfully Signed in"
@@ -46,7 +48,7 @@ router.post("/login",passport.authenticate("local",
 router.get("/logout",function(req,res){
     req.logout();
     req.flash("success","Logged you out")
-    res.redirect("/campgrounds");
+    res.redirect("/blogs");
 });
   
 module.exports=router;

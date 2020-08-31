@@ -6,7 +6,7 @@ var middleware=require("../middleware");
 
 
 //========CAMPGROUND ROUTES========//
-router.get("/campgrounds", function(req, res){
+router.get("/blogs", function(req, res){
     Campground.find({},function(err,campgrounds){
       if(err){
         req.flash("error","Something went Wrong");
@@ -17,12 +17,12 @@ router.get("/campgrounds", function(req, res){
     })
 });
   
-router.get("/campgrounds/new",middleware.isLoggedIn,function(req,res){
+router.get("/blogs/new",middleware.isLoggedIn,function(req,res){
     res.render("campgrounds/new");
 });
   
   
-router.post("/campgrounds",middleware.isLoggedIn,function(req,res){
+router.post("/blogs",middleware.isLoggedIn,function(req,res){
     var name=req.body.name;
     var image=req.body.image;
     var desc =req.body.description;
@@ -36,12 +36,12 @@ router.post("/campgrounds",middleware.isLoggedIn,function(req,res){
         console.log(err);
       }else {
         req.flash("success","Campground Added");
-        res.redirect("/campgrounds");
+        res.redirect("/blogs");
       }
     });
 });
 
-router.get("/campgrounds/:id",function(req,res){
+router.get("/blogs/:id",function(req,res){
     Campground.findById(req.params.id).populate("comments").exec(function(err,foundCampground){
      if(err){
        console.log(err)
@@ -52,31 +52,31 @@ router.get("/campgrounds/:id",function(req,res){
 });
 
 // EDIT CAMPGROUND ROUTES
-router.get("/campgrounds/:id/edit",middleware.checkOwnership,function(req,res){
+router.get("/blogs/:id/edit",middleware.checkOwnership,function(req,res){
       Campground.findById(req.params.id,function(err,foundCampground){
         res.render("campgrounds/edit",{campground:foundCampground});
       });
 });
 
 //UPDATE CAMPGROUND ROUTE
-router.put("/campgrounds/:id",middleware.checkOwnership,function(req,res){
+router.put("/blogs/:id",middleware.checkOwnership,function(req,res){
     Campground.findByIdAndUpdate(req.params.id,req.body.campground,function(err,updatedCampground){
       if(err){
-      res.redirect("/campgrounds");
+      res.redirect("/blogs");
     } else 
-    req.flash("success","Campground Updated");
-    res.redirect("/campgrounds/"+req.params.id);
+    req.flash("success","Post Updated");
+    res.redirect("/blogs/"+req.params.id);
   });
 });
 
 //DESTROY CAMPGROUND ROUTE
-router.delete("/campgrounds/:id",middleware.checkOwnership,function(req,res){
+router.delete("/blogs/:id",middleware.checkOwnership,function(req,res){
   Campground.findByIdAndRemove(req.params.id,function(err,updatedCampground){
     if(err){
-      res.redirect("/campgrounds");
+      res.redirect("/blogs");
     } else {
       req.flash("success","Campground Deleted");
-      res.redirect("/campgrounds");
+      res.redirect("/blogs");
     }
   })
 });
