@@ -1,6 +1,7 @@
 //Issues:
 // Navbar issue
 // comment div overflowing to right 
+//Check git commit
 
 const { session } = require("passport");
 const campground = require("./models/campground");
