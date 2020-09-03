@@ -88,7 +88,7 @@ router.post('/forgot', function(req, res, next) {
     function(token, user, done) {
       var smtpTransport = nodemailer.createTransport({
         service: 'Gmail', 
-        port: 465,
+        // port: 465,
         auth: {
           user: 'rohit18ranjan@gmail.com',
           // pass: process.env.GMAILPW
@@ -154,7 +154,7 @@ router.post('/reset/:token', function(req, res) {
     function(user, done) {
       var smtpTransport = nodemailer.createTransport({
         service: 'Gmail', 
-        port: 465,
+        // port: 465,
         auth: {
           user: 'rohit18ranjan@gmail.com',
           // pass: process.env.GMAILPW
