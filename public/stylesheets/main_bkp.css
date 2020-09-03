@@ -1,0 +1,26 @@
+#show
+{
+    height: 100px;
+    width:100px;
+}
+
+#delete-form{
+    display:inline;
+    color: blue;
+}
+
+.btn-xs {
+    padding: .25rem .4rem;
+    font-size: .875rem;
+    line-height: .5;
+    border-radius: .2rem;
+}
+.card-img-top{
+    height: 200px !important; 
+}
+
+
+/* 
+body{
+    background: blue;
+} */

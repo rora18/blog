@@ -1,0 +1,73 @@
+<!-- <img src="https://lh3.googleusercontent.com/pw/ACtC-3d54MiHkKm2fxlN4g_Toaes41SL_GCri62OXACUF20zZtHbjQz8EaLeyqOgtrtS574pmq8k2xuX6epBWFvidFYGZxQzCHlzWwZY_JjyVUph90gendI-CkXHzdhSc6tClylkK4h89Pe_PPOsjJuDuZLWgA=s1058-no?authuser=1" style="width:100%"> -->
+<!-- <img src="https://lh3.googleusercontent.com/pw/ACtC-3eYnTLZ0zeqNhRQdqR9qGtxyW51x82vKNJsyuW_RdehCWZtOJkuFTULxbnr2Ub0wGFhr3_ojV5FJ_4WxFP4XJu4CdPbkLqSO7-sr_l7htyQC7EzF13HFuXG44Ng2lgFqlusp63eFjsu_Y2yqjDHkzS3Mg=w794-h1058-no?authuser=1" style="width:100%"> -->
+<!-- <img src="https://lh3.googleusercontent.com/pw/ACtC-3dyZL9AsAIx5edcz2ojCb7laM6Vrqmqhoi0gXzmBNhVMPpBPlOJCrgslO6Az9U1uRd_WUPH-alTDhpjI0LpOOsv4gcD_X5czHBcbg1Q0B0LxZJ0i90aNKLtaoJ3aAHxi8Q5Px9LZ2Lt5Sbwg5QHr-Vnqw=w1024-h768-no?authuser=1" style="width:100%"> -->
+<!DOCTYPE html>
+  <html>
+      <head>
+          <title>My Photo blog</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+          <link rel="stylesheet" href="stylesheets/landing.css">
+      </head>
+      <script src="https://kit.fontawesome.com/027c8cef30.js" crossorigin="anonymous"></script>
+  
+      <body>
+
+<h2>Automatic Slideshow</h2>
+<p>Change image every 2 seconds:</p>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <!-- <img src="img_nature_wide.jpg" style="width:100%"> -->
+  <img src="https://lh3.googleusercontent.com/pw/ACtC-3d54MiHkKm2fxlN4g_Toaes41SL_GCri62OXACUF20zZtHbjQz8EaLeyqOgtrtS574pmq8k2xuX6epBWFvidFYGZxQzCHlzWwZY_JjyVUph90gendI-CkXHzdhSc6tClylkK4h89Pe_PPOsjJuDuZLWgA=s1058-no?authuser=1" style="width:100%">
+  <div class="text">Caption Text</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="https://lh3.googleusercontent.com/pw/ACtC-3eYnTLZ0zeqNhRQdqR9qGtxyW51x82vKNJsyuW_RdehCWZtOJkuFTULxbnr2Ub0wGFhr3_ojV5FJ_4WxFP4XJu4CdPbkLqSO7-sr_l7htyQC7EzF13HFuXG44Ng2lgFqlusp63eFjsu_Y2yqjDHkzS3Mg=w794-h1058-no?authuser=1" style="width:100%">
+  <!-- <img src="img_snow_wide.jpg" style="width:100%"> -->
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <!-- <img src="img_mountains_wide.jpg" style="width:100%"> -->
+  <img src="https://lh3.googleusercontent.com/pw/ACtC-3dyZL9AsAIx5edcz2ojCb7laM6Vrqmqhoi0gXzmBNhVMPpBPlOJCrgslO6Az9U1uRd_WUPH-alTDhpjI0LpOOsv4gcD_X5czHBcbg1Q0B0LxZJ0i90aNKLtaoJ3aAHxi8Q5Px9LZ2Lt5Sbwg5QHr-Vnqw=w1024-h768-no?authuser=1" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+</body>
+</html> 

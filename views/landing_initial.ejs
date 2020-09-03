@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Photo blog</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="stylesheets/landing.css">
+    </head>
+    <script src="https://kit.fontawesome.com/027c8cef30.js" crossorigin="anonymous"></script>
+
+    <body>
+        <div class="container">
+        <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+        </div>
+<!-- New landing page starts here -->
+<div class="container-fluid">
+    <div class="row h-100">
+        <div class="col-lg-3 home-left text-center">
+            <!-- <img src="../img/dp.jpg"> not loading --> 
+            <img class="rounded-circle img-thumbnail p-0 my-4 " src="https://lh3.googleusercontent.com/9iG8Y22y_dYepu66OmGW0cXhpi_C28jauoODVhImZ-unFB922Z_o7kdOee2crIBZWtxLUGQQSulOzZMIGGCgbfxyTHHI9exPFf2dXjhqEBRyzcWEmd4s_cKwzY7sz662kQZmQsCVzoHgSBCXF8h7jQt0gXIbt9uv89MV962pLD2JR-jGtWZwBJgK067TK_mSiT-U2U8L9MU98eGGXHe2iVx8DAt4kk99K_Dt7S6yqS5leMWOD4KVgR8TL_svayxyaN6ANxPD6qwBrHsQqPep1DbiBu_sfieIKNmPzQrgWOzzPz68PnrJakJE4deqY6CfH4iklkHwwux9xHbiPlg3L-lvAn6fYtBE6VY7zV6G3D8JeSOYfAn3TKol_Dz6P8frGznM2QC2EC8c7A0gi7UNpjmLSWUjb5hCtaYVNfmwiUcqpQs-Fl9uzK4lcNI4-eNKC5nJJhdCQJPUvxvM4ZE15_wofm0t3-Fjkyu0cJ7bTPXKeuNwVYKKiGy9wcMt4Y5e8bgdTZfMO27mAf1H7nQixCf8lPtbwe5x7gKgGk68iyQuq0FYvc6Mz3_HQJWSSzdsthOP1ONyyJdBDHsLAz520J09msLFYHY27g0hdXTdw_8Xec4S80nSvHyBhlbHNnp96sFJNTCsyUFzcTKpxoVUnOKOrLRAW_FhnZHGxR-l8oAfLticKmixqx5tujiMaw=s224-no?authuser=1">
+            <h4 class="font-italic font-weight-bold text-wrap"> Rohit Ranjan</h4>
+            <h4 class="font-italic text-wrap"> Data Analyst</h4>
+            <div class="row d-flex justify-content-center">
+                <i class="fab fa-instagram fa-2x m-2"></i>
+                <i class="fab fa-github fa-2x m-2"></i>
+                <i class="fab fa-twitter-square fa-2x m-2"></i>   
+            </div>
+            <div class="row d-flex justify-content-center">
+                <a  href="#" class="btn btn-outline-light">Download my CV</a>
+            </div>
+        </div>
+        <div class="col-lg-9 home-right d-flex justify-content-center align-items-center">
+            <h4 class="font-italic font-weight-bold text-wrap"> Rohit Ranjan</h4>
+        </div>
+    </div>
+</div>
+<!-- New landing page ends here -->
+        <!-- <div id="landing-header">
+            <h1> <em>WELCOME TO MY</em> 
+                <a href="/blogs"><i class="fas fa-camera-retro"></i>   blog </a> 
+            </h1>
+            <a href="/blogs" class="font-weight-light font-italic">
+                <i class="fas fa-door-open"></i>
+            </a>
+        </div> -->
+
+<!-- <%- include ('partials/footer'); -%> -->

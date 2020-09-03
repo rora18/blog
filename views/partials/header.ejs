@@ -11,10 +11,11 @@
     <script src="https://kit.fontawesome.com/027c8cef30.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/027c8cef30.js" crossorigin="anonymous"></script>
     <body>
-        <div>
+
+    <div class="container"> 
         <nav id="menu_new" class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="/">my <i class="fas fa-camera-retro"></i>blog</a>
-            <a class="navbar-brand" href="/campgrounds/new"><i class="fas fa-cloud-upload-alt"></i></a>
+            <a class="navbar-brand" href="/blogs/new"><i class="fas fa-cloud-upload-alt"></i></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -22,7 +23,7 @@
                 <ul class="navbar-nav">
                     <% if(!currentUser){ %>
                         <li class="nav-item">
-                            <a class="nav-link" href="/login">Loginn</a>
+                            <a class="nav-link" href="/login">Login</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/register">Sign Up</a>
@@ -31,24 +32,24 @@
                             <a class="nav-link" href="#">Signed In as <%=currentUser.username%></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/logout">Logoutt</a>
+                            <a class="nav-link" href="/logout">Logout</a>
                         </li>
                     <%}%> 
                 </ul>
             </div>
         </nav>
-        </div>
-        <p> this is a place holder</p>
-        <div class="container"> 
-            <% if(error && error.length > 0){ %>
-                <div class=" alert alert-danger" role="alert">
-                    <%= error %>
-                </div>        
-            <% } %>
-            <% if(success && success.length > 0){ %>
-            <div class=" alert alert-success" role="alert">
-                <%= success %>
-            </div>  
-            <% } %>
-        </div>
- 
+    </div>
+
+    <div class="container">
+        <!-- <p> this is a place holder</p>  -->
+        <% if(error && error.length > 0){ %>
+            <div class=" alert alert-danger" role="alert">
+                <%= error %>
+            </div>        
+        <% } %>
+        <% if(success && success.length > 0){ %>
+        <div class=" alert alert-success" role="alert">
+            <%= success %>
+        </div>  
+        <% } %>
+    </div>
