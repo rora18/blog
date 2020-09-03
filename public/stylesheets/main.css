@@ -302,7 +302,7 @@ a { color: inherit; }
     animation-delay: 15s; 
   }
   .slideshow li:nth-child(5) { 
-    background-image: url('../images/blog_slider_5.jpg');
+    background-image: url('../images/blog_slider_5.JPG');
     animation-delay: 20s; 
   }
   
