@@ -91,8 +91,8 @@ router.post('/forgot', function(req, res, next) {
         // port: 465,
         auth: {
           user: 'rohit18ranjan@gmail.com',
-          // pass: process.env.GMAILPW
-          pass: 'teddyeddy'
+          pass: process.env.GMAILPW
+          // pass: 'teddyeddy'
         }
       });
       var mailOptions = {
@@ -157,8 +157,8 @@ router.post('/reset/:token', function(req, res) {
         // port: 465,
         auth: {
           user: 'rohit18ranjan@gmail.com',
-          // pass: process.env.GMAILPW
-          pass: 'teddyeddy'
+          pass: process.env.GMAILPW
+          // pass: 'teddyeddy'
         }
       });
       var mailOptions = {
