@@ -1,14 +1,9 @@
-//Issues:
-// Navbar issue
-// comment div overflowing to right 
-// Final Comment Comment Check git commit again
-
 const { session } = require("passport");
 const campground = require("./models/campground");
 
-//var hostname = '127.0.0.1';
-//var port = 5000;
-var port = 80;
+var hostname = '127.0.0.1';
+var port = 3000;
+
 var express        = require("express"),
     app            = express(),
     bodyParser     = require("body-parser"),
@@ -61,6 +56,6 @@ app.use(indexRoutes);
 app.use(campgroundRoutes);
 app.use(commentRoutes);
 
-app.listen(port, function() {
-  console.log('Server running at http://' + ':' + port + '/');
+app.listen(port, hostname, function() {
+  console.log('Server running at http://'+ hostname + ':' + port + '/');
 });
